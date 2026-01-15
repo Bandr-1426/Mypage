@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مشاريعي</title>
+  <link rel="icon" href="favicon.png" />
+  <style>
+    :root{
+      --primary:#0b3c5d;      /* أزرق داكن */
+      --dark:#082f46;         /* أزرق أغمق */
+      --bg:#0d1b2a;           /* خلفية داكنة */
+      --card:#14293d;        /* كروت داكنة */
+      --text:#e6edf3;        /* نص فاتح */
+      --muted:#9fb3c8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Cairo', 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    header{
+      background:linear-gradient(135deg,var(--primary),var(--dark));
+      color:#fff;
+      padding:40px 20px;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:2.2rem}
+    header p{margin-top:10px;opacity:.95}
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:30px 20px 60px;
+    }
+
+    .filters{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:25px;
+    }
+    .filters button{
+      border:none;
+      padding:10px 16px;
+      border-radius:999px;
+      background:#fff;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
+      transition:.2s;
+    }
+    .filters button.active,
+    .filters button:hover{
+      background:var(--primary);
+      color:#fff;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .2s, box-shadow .2s;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 35px rgba(0,0,0,.12);
+    }
+
+    .card img{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:18px;
+      flex:1;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.2rem;
+    }
+
+    .card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.6;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:14px;
+    }
+    .tag{
+      background:#f1f1f1;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:.75rem;
+      color:black;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+    }
+    .actions a{
+      flex:1;
+      text-align:center;
+      text-decoration:none;
+      padding:10px 0;
+      border-radius:10px;
+      font-size:.9rem;
+      transition:.2s;
+    }
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+    }
+    .btn-primary:hover{background:var(--dark)}
+
+    .btn-outline{
+      border:1px solid var(--primary);
+      color:var(--primary);
+    }
+    .btn-outline:hover{
+      background:var(--primary);
+      color:#fff;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px 10px;
+      color:#666;
+      font-size:.9rem;
+    }
+
+    .about{
+  margin-top:-30px;
+}
+
+.about-card{
+  background:var(--card);
+  border-radius:18px;
+  padding:32px 28px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.about-img{
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid var(--primary);
+  margin-bottom:16px;
+}
+
+.about-card h2{
+  margin:10px 0 12px;
+  font-size:1.6rem;
+}
+
+.about-card p{
+  color:var(--muted);
+  line-height:1.9;
+  font-size:1rem;
+  max-width:800px;
+  margin:0 auto 20px;
+}
+
+.about-tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.about-tags span{
+  background:rgba(255,255,255,.08);
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:.85rem;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+<section class="about">
+  <div class="container">
+    <div class="about-card">
+
+      <img src="imgs/profile_img.jpg" class="about-img">
+
+      <h2>نبذة عني</h2>
+      <p>
+        أنا مطوّر برمجيات مهتم ببناء المشاريع التقنية التي تخدم المستخدم بشكل
+        بسيط وفعّال. أعمل على تطوير مواقع ويب، بوتات تليجرام، وألعاب ثنائية الأبعاد،
+        مع التركيز على الجودة وتجربة المستخدم.
+      </p>
+
+      <div class="about-tags">
+        <span>💻 Web Development</span>
+        <span>🤖 Telegram Bots</span>
+        <span>🎮 Game Development</span>
+        <span>🐍 Python</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+</header>
+
+<div class="container">
+
+  <div class="filters">
+
+  </div>
+
+  <div class="projects" id="projects">
+
+    <!-- مشروع -->
+    <div class="card" data-category="bot">
+      <img src="imgs\icon_thakkrni.jpg" alt="مشروع بوت">
+      <div class="card-content">
+        <h3>بوت ذكرني</h3>
+        <p>بوت تليجرام للأذكار، أوقات الصلاة، والقرآن الكريم.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Telegram</span>
+          <span class="tag">Bot</span>
+        </div>
+        <div class="actions">
+          <a href="https://t.me/Islamicc_bot" class="btn-primary">تشغيل</a>
+        </div>
+      </div>
+    </div>
+
+        <!-- مشروع -->
+    <div class="card" data-category="web">
+      <img src="imgs/icon_thakkrni.jpg" alt="موقع نور القرآن">
+
+      <div class="card-content">
+        <h3>موقع ذكرني</h3>
+        <p>موقع متصفح تفاعلي يمكنك من تلاوة واستماع القرآن الكريم وقراءة الأذكار اليومية بسهولة.</p>
+
+        <div class="tags">
+          <span class="tag">Web</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+
+        <div class="actions">
+          <a href="https://bandr-1426.github.io/thakkrni-bot/" class="btn-primary">تشغيل</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- مشروع -->
+      <div class="card" data-category="game">
+        <img src="imgs/icon_Novan.png" alt="لعبة مغامرات نوفان">
+
+        <div class="card-content">
+          <h3>لعبة مغامرات راكان</h3>
+          <p>لعبة مغامرات ثنائية الأبعاد بواجهة ممتعة وتجربة لعب تفاعلية.</p>
+
+          <div class="tags">
+            <span class="tag">Game</span>
+            <span class="tag">Godot</span>
+            <span class="tag">2D</span>
+          </div>
+
+          <div class="actions">
+            <a href="https://bandr-1426.itch.io/rakanadventure" class="btn-primary">تشغيل</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div style="text-align:center; margin:30px 0;">
+  <a href="https://t.me/connect_BBot" class="btn-primary" style="padding:12px 25px; font-size:1rem; border-radius:10px;">للتواصل معي</a>
+</div>
+
+
+<footer>
+  © 2026 — جميع الحقوق محفوظة
+</footer>
+
+<script>
+  function filterProjects(category){
+    const cards=document.querySelectorAll('.card');
+    const buttons=document.querySelectorAll('.filters button');
+
+    buttons.forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    cards.forEach(card=>{
+      if(category==='all' || card.dataset.category===category){
+        card.style.display='flex';
+      }else{
+        card.style.display='none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
